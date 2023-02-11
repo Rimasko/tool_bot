@@ -1,0 +1,35 @@
+repos:
+  - repo: https://github.com/python-poetry/poetry
+    rev: '1.3.2'
+    hooks:
+      - id: poetry-check
+
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black
+        language: system
+        types: [ python ]
+        args: [ --config=pyproject.toml ]
+
+      - id: isort
+        name: isort
+        entry: isort
+        language: system
+        types: [ python ]
+        args: [ --settings-path=pyproject.toml ]
+
+      - id: ruff
+        name: ruff
+        entry: ruff
+        language: system
+        types: [ python ]
+        args: [ --config=pyproject.toml ]
+
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        types: [ python ]
+        args: [ --config-file=pyproject.toml ]
