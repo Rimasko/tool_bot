@@ -25,7 +25,7 @@ repos:
         entry: ruff
         language: system
         types: [ python ]
-        args: [ --config=pyproject.toml ]
+        args: [ --config=pyproject.toml, --statistics]
 
       - id: mypy
         name: mypy
